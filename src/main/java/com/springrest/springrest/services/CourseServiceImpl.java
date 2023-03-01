@@ -1,5 +1,6 @@
 package com.springrest.springrest.services;
 import java.util.*;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -45,5 +46,9 @@ public class CourseServiceImpl implements CourseService {
             }
         });
         return course;
+    }
+    @Override
+    public void deleteCourse(long courseId) {
+        list = this.list.stream().filter(e->e.getId()!=courseId).collect(Collectors.toList());
     }
 }
