@@ -53,7 +53,7 @@ public class MyController {
             this.courseService.deleteCourse(Long.parseLong(courseId));
             return new ResponseEntity<>(HttpStatus.OK);
         }catch(Exception e){
-            return new ResponseEntity<HttpStatus>(HttpStatus.INTERNAL_SERVER_ERROR);          
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);          
         }
     }
 }
